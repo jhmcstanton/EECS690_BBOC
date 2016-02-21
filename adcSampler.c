@@ -5,6 +5,13 @@
 #define CURR_INDEX // the current index of the beginning of the sample window in the queue
 #define NUM_SAMPLES // number of samples to take before taking the average temp
 
+/**
+ * This module populates the window with the sampled temperature.
+ * When the window is full, this module removes the oldest
+ * temperature in the window and populates it with the newest
+ * sampled temperature.
+ * @returns nothing
+ */
 adcSampler():
 	sample_avg = 0
 	new_sample = sample(adc)

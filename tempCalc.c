@@ -5,6 +5,11 @@
 #define CURR_INDEX // the current index of the beginning of the sample window in the queue
 #define NUM_SAMPLES // number of samples to take before taking the average temp
 
+/**
+ * This module calculates the sampled average temperature for each
+ * sample in the window.
+ * @returns Sampled Average Temperature
+ */
 tempCalc():
 	for sample in WINDOW_Q:	
 		sample_avg = sample_avg + sample
