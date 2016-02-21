@@ -19,13 +19,14 @@ typdef int* WINDOW_Q ; // the queue structure holding the window of samples
  * sampled temperature.
  * @returns nothing
  */
-adcSampler():
-	sample_avg = 0
-	new_sample = sample(adc)
-
-	// this window will more likely be an array in final code, and will need
-	// to maintain the CURR_INDEX of the sample in the array
-	if size(WINDOW_Q) == NUM_SAMPLES: 
-		pop(WINDOW_Q) // remove the oldest sample
-	
-	push(new_sample, WINDOW_Q)
+void adcSampler(){
+  /*sample_avg = 0
+    new_sample = sample(adc)
+    
+    // this window will more likely be an array in final code, and will need
+    // to maintain the CURR_INDEX of the sample in the array
+    if size(WINDOW_Q) == NUM_SAMPLES: 
+       pop(WINDOW_Q) // remove the oldest sample
+    
+	 push(new_sample, WINDOW_Q) */
+}

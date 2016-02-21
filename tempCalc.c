@@ -17,8 +17,9 @@ typdef int* WINDOW_Q ; // the queue structure holding the window of samples
  * sample in the window.
  * @returns Sampled Average Temperature
  */
-tempCalc():
-	for sample in WINDOW_Q:	
+void tempCalc(){
+  /*	for sample in WINDOW_Q:	
 		sample_avg = sample_avg + sample
 
-	sample_avg = sample_avg / size(WINDOW_Q)	
+		sample_avg = sample_avg / size(WINDOW_Q)	*/
+}
