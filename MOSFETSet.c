@@ -1,3 +1,9 @@
+/**
+ * @file MOSFETSet.c
+ *
+ * The functions that handle the MOSFET via GPIO pins
+ */
+
 #define DESD_TEMP 85 // the constant temp to hold the black box
 #define TEMP_THRESH 5 // the allowable threshold (high or low) for temperature 
 #define SMP_DELAY 500 // the time between individual samples in the sample set
