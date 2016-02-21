@@ -1,3 +1,7 @@
+/**
+ * @file adcSampler.c
+ */
+
 #define DESD_TEMP // the constant temp to hold the black box
 #define TEMP_THRESH // the allowable threshold (high or low) for temperature 
 #define SMP_DELAY // the time between individual samples in the sample set
