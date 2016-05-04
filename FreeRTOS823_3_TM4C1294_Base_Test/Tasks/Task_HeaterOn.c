@@ -21,6 +21,7 @@
 #include	<stdbool.h>
 #include	<stdint.h>
 #include	<stdarg.h>
+#include    <math.h>
 
 #include	"driverlib/sysctl.h"
 #include	"driverlib/pin_map.h"
@@ -36,6 +37,7 @@
 
 #define		TimeBase_mS		1000
 #define     Toggle_Period   100
+#define     DUTY            0.75
 #define		OnTime_mS		500
 #define		OffTime_mS		( TimeBase_mS - OnTime_mS )
 #define     TestTime        500
@@ -43,7 +45,7 @@
 
 extern double ADC_RESULT;
 
-#define     TARGET_TEMP    40
+#define     TARGET_TEMP    35
 #define     STOP_THRESH    1
 #define     START_THRESH   5
 
@@ -53,26 +55,9 @@ extern void Task_HeaterOn( void *pvParameters ) {
 	int toggle = 0x00;
 	int counter = 0;
 	//
-	// Setup the PWM
-	//
-
-
-	//
 	//	Enable (power-on) PortG
 	//
 	SysCtlPeripheralEnable( SYSCTL_PERIPH_GPIOG );
-
-	/*PWMGenConfigure(GPIO_PORTG_BASE, GPIO_PIN_0 ,
-			PWM_GEN_MODE_DOWN | PWM_GEN_MODE_NO_SYNC);
-
-	PWMGenPeriodSet(GPIO_PORTG_BASE, GPIO_PIN_0 , 400);
-
-	PWMPulseWidthSet(GPIO_PORTG_BASE, GPIO_PIN_0 , PULSE_AMT);
-
-
-	PWMOutputState(GPIO_PORTG_BASE, PWM_OUT_0_BIT, true);*/
-
-
 
 	//
 	// Enable the GPIO Port N.
@@ -96,22 +81,6 @@ extern void Task_HeaterOn( void *pvParameters ) {
 	bool temp_rising = false;
 	while ( 1 ) {
 
-        //
-        // Set HeaterOn_H and D2 for OnTime_mS.
-        //
-		/*
-        GPIOPinWrite( GPIO_PORTG_BASE, GPIO_PIN_0, 0x01 );
-        GPIOPinWrite( GPIO_PORTN_BASE, GPIO_PIN_0, 0x01 );
-		vTaskDelay( ( OnTime_mS * configTICK_RATE_HZ ) / TimeBase_mS );
-
-        //
-        // Turn-off HeaterOn_H and D2 for 750 mS.
-        //
-        GPIOPinWrite( GPIO_PORTG_BASE, GPIO_PIN_0, 0x00 );
-        GPIOPinWrite( GPIO_PORTN_BASE, GPIO_PIN_0, 0x00 );
-		vTaskDelay( ( OffTime_mS * configTICK_RATE_HZ ) / TimeBase_mS );*/
-
-
 		if(temp_rising){
 			if(ADC_RESULT >= TARGET_TEMP - STOP_THRESH){
 				GPIOPinWrite (GPIO_PORTG_BASE, GPIO_PIN_0, 0x00 );
@@ -120,7 +89,7 @@ extern void Task_HeaterOn( void *pvParameters ) {
 				temp_rising = false;
 				toggle = 0x00;
 				counter = 0;
-			}else if(counter == Toggle_Period){
+			}else if((!toggle && counter == floor(Toggle_Period * DUTY)) || (toggle && counter == floor(Toggle_Period * (1 - DUTY)))){
 				GPIOPinWrite (GPIO_PORTG_BASE, GPIO_PIN_0, toggle );
 				GPIOPinWrite( GPIO_PORTN_BASE, GPIO_PIN_0, toggle );
 				toggle = !toggle;
@@ -129,7 +98,6 @@ extern void Task_HeaterOn( void *pvParameters ) {
 			counter++;
 		} else if(!temp_rising && ADC_RESULT < TARGET_TEMP - START_THRESH ){
 			temp_rising = true;
-			//PWMGenEnable(GPIO_PORTG_BASE, GPIO_PIN_0 );
 			GPIOPinWrite (GPIO_PORTG_BASE, GPIO_PIN_0, 0x01 );
 			GPIOPinWrite( GPIO_PORTN_BASE, GPIO_PIN_0, 0x01 );
 		}
