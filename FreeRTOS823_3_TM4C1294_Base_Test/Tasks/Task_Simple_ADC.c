@@ -36,9 +36,9 @@
 
 #include "Tasks/Task_ReportData.h"
 
-//#define ADC_QUEUE_LENGTH 5
+#define ADC_QUEUE_LENGTH 5
 
-//extern uint32_t ADC_RESULT;
+extern double ADC_RESULT;
 
 //
 // Define the ReportData Queue
@@ -51,8 +51,8 @@
 
 extern void Task_Simple_ADC0_Ch0( void *pvParameters ) {
 
-	//uint32_t adc_queue[ADC_QUEUE_LENGTH];
-	//size_t adc_index = 0;
+	double adc_queue[ADC_QUEUE_LENGTH];
+	size_t adc_index = 0;
 
 	//
 	//	Measured voltage value
@@ -77,8 +77,6 @@ extern void Task_Simple_ADC0_Ch0( void *pvParameters ) {
 
 	ADCSequenceEnable( ADC0_BASE, 0 );
 
-//	printf( ">>>>ADC Initialized.\n");
-
 	while ( 1 ) {
 
 		//
@@ -98,18 +96,21 @@ extern void Task_Simple_ADC0_Ch0( void *pvParameters ) {
 		ADCSequenceDataGet(ADC0_BASE, 0, &ADC_Value);
 		ADCIntClear( ADC0_BASE, 0 );
 
-		//adc_queue[adc_index % ADC_QUEUE_LENGTH] = ADC_Value;
+		// sweet conversion
+		double vtemp = 91.93067 - 30.455 *(((double) ADC_Value) * 3.3) / 4096;
+		adc_queue[adc_index % ADC_QUEUE_LENGTH] = vtemp;
 		//UARTprintf("ADC Value: %d\n", ADC_Value);
 
-		/*
+
 		int i;
 		ADC_RESULT = 0;
 		for(i = 0; i < ADC_QUEUE_LENGTH; i++){
 			ADC_RESULT += adc_queue[i];
 		}
 		ADC_RESULT = ADC_RESULT / ADC_QUEUE_LENGTH;
+		adc_index++;
 		//UARTprintf("ADC Result: %d\n", ADC_RESULT);
-		*/
+
 
 		//
 		//	Print ADC_Value
@@ -122,8 +123,8 @@ extern void Task_Simple_ADC0_Ch0( void *pvParameters ) {
 
 		theADCReport.TimeStamp = xPortSysTickCount;
 		theADCReport.ReportName = 2;
-		theADCReport.ReportValue_0 = ADC_Value;
-		theADCReport.ReportValue_1 = 0;
+		theADCReport.ReportValue_0 = ADC_RESULT * 10;
+		theADCReport.ReportValue_1 = vtemp * 10;
 
 		xQueueSend( ReportData_Queue, &theADCReport, 0 );
 

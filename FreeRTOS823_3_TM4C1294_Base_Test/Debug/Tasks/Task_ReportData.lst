@@ -1,11 +1,11 @@
-TI ARM Assembler PC v5.2.2 Tue Mar 29 11:54:13 2016
+TI ARM Assembler PC v5.2.2 Tue Apr 12 16:33:57 2016
 
 Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
 Task_ReportData.asm                                                  PAGE    1
 
        1                    ;******************************************************************************
        2                    ;* TI ARM C/C++ Codegen                                             PC v5.2.2 *
-       3                    ;* Date/Time created: Tue Mar 29 11:54:13 2016                                *
+       3                    ;* Date/Time created: Tue Apr 12 16:33:57 2016                                *
        4                    ;******************************************************************************
        5                            .compiler_opts --abi=eabi --arm_vmrs_si_workaround=off --code_state=16 --diag_wrap=off --disab
        6 00000000                   .thumb
@@ -58,7 +58,7 @@ Task_ReportData.asm                                                  PAGE    1
       53                    
       54                    
       55                    $C$DW$10        .dwtag  DW_TAG_subprogram, DW_AT_name("xQueueGenericCreate")
-TI ARM Assembler PC v5.2.2 Tue Mar 29 11:54:13 2016
+TI ARM Assembler PC v5.2.2 Tue Apr 12 16:33:57 2016
 
 Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
 Task_ReportData.asm                                                  PAGE    2
@@ -118,7 +118,7 @@ Task_ReportData.asm                                                  PAGE    2
      108                    $C$DW$16        .dwtag  DW_TAG_formal_parameter, DW_AT_name("pvParameters")
      109                            .dwattr $C$DW$16, DW_AT_TI_symbol_name("pvParameters")
      110                            .dwattr $C$DW$16, DW_AT_type(*$C$DW$T$3)
-TI ARM Assembler PC v5.2.2 Tue Mar 29 11:54:13 2016
+TI ARM Assembler PC v5.2.2 Tue Apr 12 16:33:57 2016
 
 Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
 Task_ReportData.asm                                                  PAGE    3
@@ -174,11 +174,11 @@ Task_ReportData.asm                                                  PAGE    3
      159                            .dwattr $C$DW$21, DW_AT_TI_call
      160 00000012 FFFEF7FF!         BL        xQueueGenericCreate   ; [DPU_3_PIPE] |45|  ; [KEEP 32-BIT INS]
      161                            ; CALL OCCURS {xQueueGenericCreate }  ; [] |45| 
-     162 00000016 4910              LDR       A2, $C$CON1           ; [DPU_3_PIPE] |45|  ; [ORIG 16-BIT INS]
+     162 00000016 4911              LDR       A2, $C$CON1           ; [DPU_3_PIPE] |45|  ; [ORIG 16-BIT INS]
      163 00000018 6008              STR       A1, [A2, #0]          ; [DPU_3_PIPE] |45|  ; [ORIG 16-BIT INS]
      164                            .dwpsn  file "../Tasks/Task_ReportData.c",line 47,column 10,is_stmt,isa 1
      165                    ;* --------------------------------------------------------------------------*
-TI ARM Assembler PC v5.2.2 Tue Mar 29 11:54:13 2016
+TI ARM Assembler PC v5.2.2 Tue Apr 12 16:33:57 2016
 
 Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
 Task_ReportData.asm                                                  PAGE    4
@@ -193,7 +193,7 @@ Task_ReportData.asm                                                  PAGE    4
      173                    ;* --------------------------------------------------------------------------*
      174 0000001a           ||$C$L1||:    
      175                            .dwpsn  file "../Tasks/Task_ReportData.c",line 53,column 2,is_stmt,isa 1
-     176 0000001a 480F              LDR       A1, $C$CON1           ; [DPU_3_PIPE] |53|  ; [ORIG 16-BIT INS]
+     176 0000001a 4810              LDR       A1, $C$CON1           ; [DPU_3_PIPE] |53|  ; [ORIG 16-BIT INS]
      177 0000001c 6800              LDR       A1, [A1, #0]          ; [DPU_3_PIPE] |53|  ; [ORIG 16-BIT INS]
      178 0000001e A902              ADD       A2, SP, #8            ; [DPU_3_PIPE] |53|  ; [ORIG 16-BIT INS]
      179 00000020 220A              MOVS      A3, #10               ; [DPU_3_PIPE] |53|  ; [ORIG 16-BIT INS]
@@ -238,13 +238,13 @@ Task_ReportData.asm                                                  PAGE    4
      218                    ;* STRINGS                                                                    *
      219                    ;******************************************************************************
      220 00000042                   .sect   ".text"
-TI ARM Assembler PC v5.2.2 Tue Mar 29 11:54:13 2016
+TI ARM Assembler PC v5.2.2 Tue Apr 12 16:33:57 2016
 
 Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
 Task_ReportData.asm                                                  PAGE    5
 
      221                            .align  4
-     222 00000044 25        ||$C$SL1||:     .string "%08d,%02d,%d,%d",10,0
+     222 00000044 25        ||$C$SL1||:     .string "%08d,%02d,%03d,%03d",10,0
          00000045 30       
          00000046 38       
          00000047 64       
@@ -255,19 +255,23 @@ Task_ReportData.asm                                                  PAGE    5
          0000004c 64       
          0000004d 2C       
          0000004e 25       
-         0000004f 64       
-         00000050 2C       
-         00000051 25       
-         00000052 64       
-         00000053 0A       
-         00000054 00       
+         0000004f 30       
+         00000050 33       
+         00000051 64       
+         00000052 2C       
+         00000053 25       
+         00000054 30       
+         00000055 33       
+         00000056 64       
+         00000057 0A       
+         00000058 00       
      223                    ;******************************************************************************
      224                    ;* CONSTANT TABLE                                                             *
      225                    ;******************************************************************************
-     226 00000055                   .sect   ".text"
+     226 00000059                   .sect   ".text"
      227                            .align  4
-     228 00000056 0000C046! ||$C$CON1||:    .bits   ReportData_Queue,32
-         0000005a 00000000 
+     228 0000005a 0000C046! ||$C$CON1||:    .bits   ReportData_Queue,32
+         0000005e 00000000 
      229                    ;*****************************************************************************
      230                    ;* UNDEFINED EXTERNAL REFERENCES                                             *
      231                    ;*****************************************************************************
@@ -294,15 +298,15 @@ Task_ReportData.asm                                                  PAGE    5
      252                    ;* TYPE INFORMATION                                                           *
      253                    ;******************************************************************************
      254                    
-     255                    $C$DW$T$50      .dwtag  DW_TAG_enumeration_type
-     256                            .dwattr $C$DW$T$50, DW_AT_byte_size(0x01)
-     257                    $C$DW$24        .dwtag  DW_TAG_enumerator, DW_AT_name("eRunning"), DW_AT_const_value(0x00)
-     258                            .dwattr $C$DW$24, DW_AT_decl_file("H:/TI_Workspace/TI_ARM_Tiva_Projects_EECS_690_Sp16/Source/i
-TI ARM Assembler PC v5.2.2 Tue Mar 29 11:54:13 2016
+TI ARM Assembler PC v5.2.2 Tue Apr 12 16:33:57 2016
 
 Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
 Task_ReportData.asm                                                  PAGE    6
 
+     255                    $C$DW$T$50      .dwtag  DW_TAG_enumeration_type
+     256                            .dwattr $C$DW$T$50, DW_AT_byte_size(0x01)
+     257                    $C$DW$24        .dwtag  DW_TAG_enumerator, DW_AT_name("eRunning"), DW_AT_const_value(0x00)
+     258                            .dwattr $C$DW$24, DW_AT_decl_file("H:/TI_Workspace/TI_ARM_Tiva_Projects_EECS_690_Sp16/Source/i
      259                            .dwattr $C$DW$24, DW_AT_decl_line(0x72)
      260                            .dwattr $C$DW$24, DW_AT_decl_column(0x02)
      261                    $C$DW$25        .dwtag  DW_TAG_enumerator, DW_AT_name("eReady"), DW_AT_const_value(0x01)
@@ -354,15 +358,15 @@ Task_ReportData.asm                                                  PAGE    6
      307                    $C$DW$33        .dwtag  DW_TAG_enumerator, DW_AT_name("eSetValueWithoutOverwrite"), DW_AT_const_value(
      308                            .dwattr $C$DW$33, DW_AT_decl_file("H:/TI_Workspace/TI_ARM_Tiva_Projects_EECS_690_Sp16/Source/i
      309                            .dwattr $C$DW$33, DW_AT_decl_line(0x80)
-     310                            .dwattr $C$DW$33, DW_AT_decl_column(0x02)
-     311                            .dwendtag $C$DW$T$56
-     312                    
-     313                            .dwattr $C$DW$T$56, DW_AT_decl_file("H:/TI_Workspace/TI_ARM_Tiva_Projects_EECS_690_Sp16/Source
-TI ARM Assembler PC v5.2.2 Tue Mar 29 11:54:13 2016
+TI ARM Assembler PC v5.2.2 Tue Apr 12 16:33:57 2016
 
 Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
 Task_ReportData.asm                                                  PAGE    7
 
+     310                            .dwattr $C$DW$33, DW_AT_decl_column(0x02)
+     311                            .dwendtag $C$DW$T$56
+     312                    
+     313                            .dwattr $C$DW$T$56, DW_AT_decl_file("H:/TI_Workspace/TI_ARM_Tiva_Projects_EECS_690_Sp16/Source
      314                            .dwattr $C$DW$T$56, DW_AT_decl_line(0x7b)
      315                            .dwattr $C$DW$T$56, DW_AT_decl_column(0x01)
      316                    $C$DW$T$57      .dwtag  DW_TAG_typedef, DW_AT_name("eNotifyAction")
@@ -414,15 +418,15 @@ Task_ReportData.asm                                                  PAGE    7
      362                            .dwattr $C$DW$38, DW_AT_type(*$C$DW$T$21)
      363                            .dwattr $C$DW$38, DW_AT_name("xSizeInBytes")
      364                            .dwattr $C$DW$38, DW_AT_TI_symbol_name("xSizeInBytes")
-     365                            .dwattr $C$DW$38, DW_AT_data_member_location[DW_OP_plus_uconst 0x4]
-     366                            .dwattr $C$DW$38, DW_AT_accessibility(DW_ACCESS_public)
-     367                            .dwattr $C$DW$38, DW_AT_decl_file("H:\TI_Workspace\TI_ARM_Tiva_Projects_EECS_690_Sp16\Source\i
-     368                            .dwattr $C$DW$38, DW_AT_decl_line(0x97)
-TI ARM Assembler PC v5.2.2 Tue Mar 29 11:54:13 2016
+TI ARM Assembler PC v5.2.2 Tue Apr 12 16:33:57 2016
 
 Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
 Task_ReportData.asm                                                  PAGE    8
 
+     365                            .dwattr $C$DW$38, DW_AT_data_member_location[DW_OP_plus_uconst 0x4]
+     366                            .dwattr $C$DW$38, DW_AT_accessibility(DW_ACCESS_public)
+     367                            .dwattr $C$DW$38, DW_AT_decl_file("H:\TI_Workspace\TI_ARM_Tiva_Projects_EECS_690_Sp16\Source\i
+     368                            .dwattr $C$DW$38, DW_AT_decl_line(0x97)
      369                            .dwattr $C$DW$38, DW_AT_decl_column(0x09)
      370                            .dwendtag $C$DW$T$22
      371                    
@@ -474,15 +478,15 @@ Task_ReportData.asm                                                  PAGE    8
      417                            .dwattr $C$DW$42, DW_AT_accessibility(DW_ACCESS_public)
      418                            .dwattr $C$DW$42, DW_AT_decl_file("H:/TI_Workspace/TI_ARM_Tiva_Projects_EECS_690_Sp16/FreeRTOS
      419                            .dwattr $C$DW$42, DW_AT_decl_line(0x2d)
-     420                            .dwattr $C$DW$42, DW_AT_decl_column(0x12)
-     421                            .dwendtag $C$DW$T$24
-     422                    
-     423                            .dwattr $C$DW$T$24, DW_AT_decl_file("H:/TI_Workspace/TI_ARM_Tiva_Projects_EECS_690_Sp16/FreeRT
-TI ARM Assembler PC v5.2.2 Tue Mar 29 11:54:13 2016
+TI ARM Assembler PC v5.2.2 Tue Apr 12 16:33:57 2016
 
 Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
 Task_ReportData.asm                                                  PAGE    9
 
+     420                            .dwattr $C$DW$42, DW_AT_decl_column(0x12)
+     421                            .dwendtag $C$DW$T$24
+     422                    
+     423                            .dwattr $C$DW$T$24, DW_AT_decl_file("H:/TI_Workspace/TI_ARM_Tiva_Projects_EECS_690_Sp16/FreeRT
      424                            .dwattr $C$DW$T$24, DW_AT_decl_line(0x2a)
      425                            .dwattr $C$DW$T$24, DW_AT_decl_column(0x10)
      426                    $C$DW$T$61      .dwtag  DW_TAG_typedef, DW_AT_name("ReportData_Item")
@@ -534,15 +538,15 @@ Task_ReportData.asm                                                  PAGE    9
      472                            .dwattr $C$DW$T$37, DW_AT_address_class(0x20)
      473                    $C$DW$T$38      .dwtag  DW_TAG_typedef, DW_AT_name("TaskFunction_t")
      474                            .dwattr $C$DW$T$38, DW_AT_type(*$C$DW$T$37)
-     475                            .dwattr $C$DW$T$38, DW_AT_language(DW_LANG_C)
-     476                            .dwattr $C$DW$T$38, DW_AT_decl_file("H:\TI_Workspace\TI_ARM_Tiva_Projects_EECS_690_Sp16\Source
-     477                            .dwattr $C$DW$T$38, DW_AT_decl_line(0x4d)
-     478                            .dwattr $C$DW$T$38, DW_AT_decl_column(0x10)
-TI ARM Assembler PC v5.2.2 Tue Mar 29 11:54:13 2016
+TI ARM Assembler PC v5.2.2 Tue Apr 12 16:33:57 2016
 
 Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
 Task_ReportData.asm                                                  PAGE   10
 
+     475                            .dwattr $C$DW$T$38, DW_AT_language(DW_LANG_C)
+     476                            .dwattr $C$DW$T$38, DW_AT_decl_file("H:\TI_Workspace\TI_ARM_Tiva_Projects_EECS_690_Sp16\Source
+     477                            .dwattr $C$DW$T$38, DW_AT_decl_line(0x4d)
+     478                            .dwattr $C$DW$T$38, DW_AT_decl_column(0x10)
      479                    $C$DW$T$4       .dwtag  DW_TAG_base_type
      480                            .dwattr $C$DW$T$4, DW_AT_encoding(DW_ATE_boolean)
      481                            .dwattr $C$DW$T$4, DW_AT_name("bool")
@@ -594,15 +598,15 @@ Task_ReportData.asm                                                  PAGE   10
      527                            .dwattr $C$DW$T$7, DW_AT_encoding(DW_ATE_signed_char)
      528                            .dwattr $C$DW$T$7, DW_AT_name("wchar_t")
      529                            .dwattr $C$DW$T$7, DW_AT_byte_size(0x02)
-     530                    $C$DW$T$8       .dwtag  DW_TAG_base_type
-     531                            .dwattr $C$DW$T$8, DW_AT_encoding(DW_ATE_signed)
-     532                            .dwattr $C$DW$T$8, DW_AT_name("short")
-     533                            .dwattr $C$DW$T$8, DW_AT_byte_size(0x02)
-TI ARM Assembler PC v5.2.2 Tue Mar 29 11:54:13 2016
+TI ARM Assembler PC v5.2.2 Tue Apr 12 16:33:57 2016
 
 Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
 Task_ReportData.asm                                                  PAGE   11
 
+     530                    $C$DW$T$8       .dwtag  DW_TAG_base_type
+     531                            .dwattr $C$DW$T$8, DW_AT_encoding(DW_ATE_signed)
+     532                            .dwattr $C$DW$T$8, DW_AT_name("short")
+     533                            .dwattr $C$DW$T$8, DW_AT_byte_size(0x02)
      534                    $C$DW$T$77      .dwtag  DW_TAG_typedef, DW_AT_name("int16_t")
      535                            .dwattr $C$DW$T$77, DW_AT_type(*$C$DW$T$8)
      536                            .dwattr $C$DW$T$77, DW_AT_language(DW_LANG_C)
@@ -654,15 +658,15 @@ Task_ReportData.asm                                                  PAGE   11
      582                            .dwattr $C$DW$T$83, DW_AT_language(DW_LANG_C)
      583                            .dwattr $C$DW$T$83, DW_AT_decl_file("C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/
      584                            .dwattr $C$DW$T$83, DW_AT_decl_line(0x41)
-     585                            .dwattr $C$DW$T$83, DW_AT_decl_column(0x1a)
-     586                    $C$DW$T$10      .dwtag  DW_TAG_base_type
-     587                            .dwattr $C$DW$T$10, DW_AT_encoding(DW_ATE_signed)
-     588                            .dwattr $C$DW$T$10, DW_AT_name("int")
-TI ARM Assembler PC v5.2.2 Tue Mar 29 11:54:13 2016
+TI ARM Assembler PC v5.2.2 Tue Apr 12 16:33:57 2016
 
 Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
 Task_ReportData.asm                                                  PAGE   12
 
+     585                            .dwattr $C$DW$T$83, DW_AT_decl_column(0x1a)
+     586                    $C$DW$T$10      .dwtag  DW_TAG_base_type
+     587                            .dwattr $C$DW$T$10, DW_AT_encoding(DW_ATE_signed)
+     588                            .dwattr $C$DW$T$10, DW_AT_name("int")
      589                            .dwattr $C$DW$T$10, DW_AT_byte_size(0x04)
      590                    $C$DW$T$84      .dwtag  DW_TAG_typedef, DW_AT_name("_Ptrdifft")
      591                            .dwattr $C$DW$T$84, DW_AT_type(*$C$DW$T$10)
@@ -714,15 +718,15 @@ Task_ReportData.asm                                                  PAGE   12
      637                            .dwattr $C$DW$T$92, DW_AT_decl_line(0x4a)
      638                            .dwattr $C$DW$T$92, DW_AT_decl_column(0x17)
      639                    $C$DW$T$93      .dwtag  DW_TAG_typedef, DW_AT_name("int_fast8_t")
-     640                            .dwattr $C$DW$T$93, DW_AT_type(*$C$DW$T$53)
-     641                            .dwattr $C$DW$T$93, DW_AT_language(DW_LANG_C)
-     642                            .dwattr $C$DW$T$93, DW_AT_decl_file("C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/
-     643                            .dwattr $C$DW$T$93, DW_AT_decl_line(0x45)
-TI ARM Assembler PC v5.2.2 Tue Mar 29 11:54:13 2016
+TI ARM Assembler PC v5.2.2 Tue Apr 12 16:33:57 2016
 
 Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
 Task_ReportData.asm                                                  PAGE   13
 
+     640                            .dwattr $C$DW$T$93, DW_AT_type(*$C$DW$T$53)
+     641                            .dwattr $C$DW$T$93, DW_AT_language(DW_LANG_C)
+     642                            .dwattr $C$DW$T$93, DW_AT_decl_file("C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/
+     643                            .dwattr $C$DW$T$93, DW_AT_decl_line(0x45)
      644                            .dwattr $C$DW$T$93, DW_AT_decl_column(0x17)
      645                    $C$DW$T$94      .dwtag  DW_TAG_typedef, DW_AT_name("int_least32_t")
      646                            .dwattr $C$DW$T$94, DW_AT_type(*$C$DW$T$53)
@@ -774,15 +778,15 @@ Task_ReportData.asm                                                  PAGE   13
      692                            .dwattr $C$DW$T$23, DW_AT_type(*$C$DW$T$11)
      693                            .dwattr $C$DW$T$23, DW_AT_language(DW_LANG_C)
      694                            .dwattr $C$DW$T$23, DW_AT_decl_file("C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/
-     695                            .dwattr $C$DW$T$23, DW_AT_decl_line(0x2f)
-     696                            .dwattr $C$DW$T$23, DW_AT_decl_column(0x1c)
-     697                    $C$DW$T$44      .dwtag  DW_TAG_typedef, DW_AT_name("StackType_t")
-     698                            .dwattr $C$DW$T$44, DW_AT_type(*$C$DW$T$23)
-TI ARM Assembler PC v5.2.2 Tue Mar 29 11:54:13 2016
+TI ARM Assembler PC v5.2.2 Tue Apr 12 16:33:57 2016
 
 Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
 Task_ReportData.asm                                                  PAGE   14
 
+     695                            .dwattr $C$DW$T$23, DW_AT_decl_line(0x2f)
+     696                            .dwattr $C$DW$T$23, DW_AT_decl_column(0x1c)
+     697                    $C$DW$T$44      .dwtag  DW_TAG_typedef, DW_AT_name("StackType_t")
+     698                            .dwattr $C$DW$T$44, DW_AT_type(*$C$DW$T$23)
      699                            .dwattr $C$DW$T$44, DW_AT_language(DW_LANG_C)
      700                            .dwattr $C$DW$T$44, DW_AT_decl_file("H:/TI_Workspace/TI_ARM_Tiva_Projects_EECS_690_Sp16/Source
      701                            .dwattr $C$DW$T$44, DW_AT_decl_line(0x68)
@@ -834,15 +838,15 @@ Task_ReportData.asm                                                  PAGE   14
      747                            .dwattr $C$DW$T$106, DW_AT_decl_file("C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2
      748                            .dwattr $C$DW$T$106, DW_AT_decl_line(0x3d)
      749                            .dwattr $C$DW$T$106, DW_AT_decl_column(0x16)
-     750                    $C$DW$T$107     .dwtag  DW_TAG_typedef, DW_AT_name("uintptr_t")
-     751                            .dwattr $C$DW$T$107, DW_AT_type(*$C$DW$T$11)
-     752                            .dwattr $C$DW$T$107, DW_AT_language(DW_LANG_C)
-     753                            .dwattr $C$DW$T$107, DW_AT_decl_file("C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2
-TI ARM Assembler PC v5.2.2 Tue Mar 29 11:54:13 2016
+TI ARM Assembler PC v5.2.2 Tue Apr 12 16:33:57 2016
 
 Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
 Task_ReportData.asm                                                  PAGE   15
 
+     750                    $C$DW$T$107     .dwtag  DW_TAG_typedef, DW_AT_name("uintptr_t")
+     751                            .dwattr $C$DW$T$107, DW_AT_type(*$C$DW$T$11)
+     752                            .dwattr $C$DW$T$107, DW_AT_language(DW_LANG_C)
+     753                            .dwattr $C$DW$T$107, DW_AT_decl_file("C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2
      754                            .dwattr $C$DW$T$107, DW_AT_decl_line(0x53)
      755                            .dwattr $C$DW$T$107, DW_AT_decl_column(0x1a)
      756                    $C$DW$T$12      .dwtag  DW_TAG_base_type
@@ -894,15 +898,15 @@ Task_ReportData.asm                                                  PAGE   15
      802                            .dwattr $C$DW$T$113, DW_AT_decl_line(0x40)
      803                            .dwattr $C$DW$T$113, DW_AT_decl_column(0x17)
      804                    $C$DW$T$114     .dwtag  DW_TAG_typedef, DW_AT_name("portDOUBLE")
-     805                            .dwattr $C$DW$T$114, DW_AT_type(*$C$DW$T$111)
-     806                            .dwattr $C$DW$T$114, DW_AT_language(DW_LANG_C)
-     807                            .dwattr $C$DW$T$114, DW_AT_decl_file("H:/TI_Workspace/TI_ARM_Tiva_Projects_EECS_690_Sp16/Sourc
-     808                            .dwattr $C$DW$T$114, DW_AT_decl_line(0x62)
-TI ARM Assembler PC v5.2.2 Tue Mar 29 11:54:13 2016
+TI ARM Assembler PC v5.2.2 Tue Apr 12 16:33:57 2016
 
 Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
 Task_ReportData.asm                                                  PAGE   16
 
+     805                            .dwattr $C$DW$T$114, DW_AT_type(*$C$DW$T$111)
+     806                            .dwattr $C$DW$T$114, DW_AT_language(DW_LANG_C)
+     807                            .dwattr $C$DW$T$114, DW_AT_decl_file("H:/TI_Workspace/TI_ARM_Tiva_Projects_EECS_690_Sp16/Sourc
+     808                            .dwattr $C$DW$T$114, DW_AT_decl_line(0x62)
      809                            .dwattr $C$DW$T$114, DW_AT_decl_column(0x12)
      810                    $C$DW$T$115     .dwtag  DW_TAG_typedef, DW_AT_name("intmax_t")
      811                            .dwattr $C$DW$T$115, DW_AT_type(*$C$DW$T$14)
@@ -954,15 +958,15 @@ Task_ReportData.asm                                                  PAGE   16
      857                            .dwattr $C$DW$T$121, DW_AT_decl_file("H:/TI_Workspace/TI_ARM_Tiva_Projects_EECS_690_Sp16/Sourc
      858                            .dwattr $C$DW$T$121, DW_AT_decl_line(0x61)
      859                            .dwattr $C$DW$T$121, DW_AT_decl_column(0x10)
-     860                    $C$DW$T$17      .dwtag  DW_TAG_base_type
-     861                            .dwattr $C$DW$T$17, DW_AT_encoding(DW_ATE_float)
-     862                            .dwattr $C$DW$T$17, DW_AT_name("double")
-     863                            .dwattr $C$DW$T$17, DW_AT_byte_size(0x08)
-TI ARM Assembler PC v5.2.2 Tue Mar 29 11:54:13 2016
+TI ARM Assembler PC v5.2.2 Tue Apr 12 16:33:57 2016
 
 Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
 Task_ReportData.asm                                                  PAGE   17
 
+     860                    $C$DW$T$17      .dwtag  DW_TAG_base_type
+     861                            .dwattr $C$DW$T$17, DW_AT_encoding(DW_ATE_float)
+     862                            .dwattr $C$DW$T$17, DW_AT_name("double")
+     863                            .dwattr $C$DW$T$17, DW_AT_byte_size(0x08)
      864                    $C$DW$T$18      .dwtag  DW_TAG_base_type
      865                            .dwattr $C$DW$T$18, DW_AT_encoding(DW_ATE_float)
      866                            .dwattr $C$DW$T$18, DW_AT_name("long double")
@@ -1014,15 +1018,15 @@ Task_ReportData.asm                                                  PAGE   17
      912                            .dwattr $C$DW$T$127, DW_AT_decl_line(0x37)
      913                            .dwattr $C$DW$T$127, DW_AT_decl_column(0x03)
      914                    $C$DW$T$128     .dwtag  DW_TAG_typedef, DW_AT_name("_Va_list")
-     915                            .dwattr $C$DW$T$128, DW_AT_type(*$C$DW$T$127)
-     916                            .dwattr $C$DW$T$128, DW_AT_language(DW_LANG_C)
-     917                            .dwattr $C$DW$T$128, DW_AT_decl_file("C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2
-     918                            .dwattr $C$DW$T$128, DW_AT_decl_line(0x1f6)
-TI ARM Assembler PC v5.2.2 Tue Mar 29 11:54:13 2016
+TI ARM Assembler PC v5.2.2 Tue Apr 12 16:33:57 2016
 
 Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
 Task_ReportData.asm                                                  PAGE   18
 
+     915                            .dwattr $C$DW$T$128, DW_AT_type(*$C$DW$T$127)
+     916                            .dwattr $C$DW$T$128, DW_AT_language(DW_LANG_C)
+     917                            .dwattr $C$DW$T$128, DW_AT_decl_file("C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2
+     918                            .dwattr $C$DW$T$128, DW_AT_decl_line(0x1f6)
      919                            .dwattr $C$DW$T$128, DW_AT_decl_column(0x17)
      920                    
      921                    $C$DW$T$30      .dwtag  DW_TAG_structure_type
@@ -1074,15 +1078,15 @@ Task_ReportData.asm                                                  PAGE   18
      967                            .dwattr $C$DW$49, DW_AT_type(*$C$DW$T$31)
      968                            .dwattr $C$DW$49, DW_AT_name("xItemValue")
      969                            .dwattr $C$DW$49, DW_AT_TI_symbol_name("xItemValue")
-     970                            .dwattr $C$DW$49, DW_AT_data_member_location[DW_OP_plus_uconst 0x0]
-     971                            .dwattr $C$DW$49, DW_AT_accessibility(DW_ACCESS_public)
-     972                            .dwattr $C$DW$49, DW_AT_decl_file("H:\TI_Workspace\TI_ARM_Tiva_Projects_EECS_690_Sp16\Source\i
-     973                            .dwattr $C$DW$49, DW_AT_decl_line(0xb8)
-TI ARM Assembler PC v5.2.2 Tue Mar 29 11:54:13 2016
+TI ARM Assembler PC v5.2.2 Tue Apr 12 16:33:57 2016
 
 Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
 Task_ReportData.asm                                                  PAGE   19
 
+     970                            .dwattr $C$DW$49, DW_AT_data_member_location[DW_OP_plus_uconst 0x0]
+     971                            .dwattr $C$DW$49, DW_AT_accessibility(DW_ACCESS_public)
+     972                            .dwattr $C$DW$49, DW_AT_decl_file("H:\TI_Workspace\TI_ARM_Tiva_Projects_EECS_690_Sp16\Source\i
+     973                            .dwattr $C$DW$49, DW_AT_decl_line(0xb8)
      974                            .dwattr $C$DW$49, DW_AT_decl_column(0x21)
      975                    $C$DW$50        .dwtag  DW_TAG_member
      976                            .dwattr $C$DW$50, DW_AT_type(*$C$DW$T$32)
@@ -1134,15 +1138,15 @@ Task_ReportData.asm                                                  PAGE   19
     1022                    $C$DW$T$28      .dwtag  DW_TAG_pointer_type
     1023                            .dwattr $C$DW$T$28, DW_AT_type(*$C$DW$T$27)
     1024                            .dwattr $C$DW$T$28, DW_AT_address_class(0x20)
-    1025                    $C$DW$T$32      .dwtag  DW_TAG_pointer_type
-    1026                            .dwattr $C$DW$T$32, DW_AT_type(*$C$DW$T$33)
-    1027                            .dwattr $C$DW$T$32, DW_AT_address_class(0x20)
-    1028                    
-TI ARM Assembler PC v5.2.2 Tue Mar 29 11:54:13 2016
+TI ARM Assembler PC v5.2.2 Tue Apr 12 16:33:57 2016
 
 Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
 Task_ReportData.asm                                                  PAGE   20
 
+    1025                    $C$DW$T$32      .dwtag  DW_TAG_pointer_type
+    1026                            .dwattr $C$DW$T$32, DW_AT_type(*$C$DW$T$33)
+    1027                            .dwattr $C$DW$T$32, DW_AT_address_class(0x20)
+    1028                    
     1029                    $C$DW$T$34      .dwtag  DW_TAG_structure_type
     1030                            .dwattr $C$DW$T$34, DW_AT_name("xMEMORY_REGION")
     1031                            .dwattr $C$DW$T$34, DW_AT_byte_size(0x0c)
@@ -1194,15 +1198,15 @@ Task_ReportData.asm                                                  PAGE   20
     1077                            .dwendtag $C$DW$T$47
     1078                    
     1079                    
-    1080                    $C$DW$T$35      .dwtag  DW_TAG_structure_type
-    1081                            .dwattr $C$DW$T$35, DW_AT_name("xMINI_LIST_ITEM")
-    1082                            .dwattr $C$DW$T$35, DW_AT_byte_size(0x0c)
-    1083                    $C$DW$58        .dwtag  DW_TAG_member
-TI ARM Assembler PC v5.2.2 Tue Mar 29 11:54:13 2016
+TI ARM Assembler PC v5.2.2 Tue Apr 12 16:33:57 2016
 
 Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
 Task_ReportData.asm                                                  PAGE   21
 
+    1080                    $C$DW$T$35      .dwtag  DW_TAG_structure_type
+    1081                            .dwattr $C$DW$T$35, DW_AT_name("xMINI_LIST_ITEM")
+    1082                            .dwattr $C$DW$T$35, DW_AT_byte_size(0x0c)
+    1083                    $C$DW$58        .dwtag  DW_TAG_member
     1084                            .dwattr $C$DW$58, DW_AT_type(*$C$DW$T$31)
     1085                            .dwattr $C$DW$58, DW_AT_name("xItemValue")
     1086                            .dwattr $C$DW$58, DW_AT_TI_symbol_name("xItemValue")
@@ -1254,15 +1258,15 @@ Task_ReportData.asm                                                  PAGE   21
     1132                            .dwattr $C$DW$61, DW_AT_decl_line(0x9b)
     1133                            .dwattr $C$DW$61, DW_AT_decl_column(0x11)
     1134                    $C$DW$62        .dwtag  DW_TAG_member
-    1135                            .dwattr $C$DW$62, DW_AT_type(*$C$DW$T$42)
-    1136                            .dwattr $C$DW$62, DW_AT_name("pcName")
-    1137                            .dwattr $C$DW$62, DW_AT_TI_symbol_name("pcName")
-    1138                            .dwattr $C$DW$62, DW_AT_data_member_location[DW_OP_plus_uconst 0x4]
-TI ARM Assembler PC v5.2.2 Tue Mar 29 11:54:13 2016
+TI ARM Assembler PC v5.2.2 Tue Apr 12 16:33:57 2016
 
 Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
 Task_ReportData.asm                                                  PAGE   22
 
+    1135                            .dwattr $C$DW$62, DW_AT_type(*$C$DW$T$42)
+    1136                            .dwattr $C$DW$62, DW_AT_name("pcName")
+    1137                            .dwattr $C$DW$62, DW_AT_TI_symbol_name("pcName")
+    1138                            .dwattr $C$DW$62, DW_AT_data_member_location[DW_OP_plus_uconst 0x4]
     1139                            .dwattr $C$DW$62, DW_AT_accessibility(DW_ACCESS_public)
     1140                            .dwattr $C$DW$62, DW_AT_decl_file("H:/TI_Workspace/TI_ARM_Tiva_Projects_EECS_690_Sp16/Source/i
     1141                            .dwattr $C$DW$62, DW_AT_decl_line(0x9c)
@@ -1314,15 +1318,15 @@ Task_ReportData.asm                                                  PAGE   22
     1187                            .dwattr $C$DW$67, DW_AT_decl_column(0x11)
     1188                            .dwendtag $C$DW$T$48
     1189                    
-    1190                            .dwattr $C$DW$T$48, DW_AT_decl_file("H:/TI_Workspace/TI_ARM_Tiva_Projects_EECS_690_Sp16/Source
-    1191                            .dwattr $C$DW$T$48, DW_AT_decl_line(0x99)
-    1192                            .dwattr $C$DW$T$48, DW_AT_decl_column(0x10)
-    1193                    $C$DW$T$130     .dwtag  DW_TAG_typedef, DW_AT_name("TaskParameters_t")
-TI ARM Assembler PC v5.2.2 Tue Mar 29 11:54:13 2016
+TI ARM Assembler PC v5.2.2 Tue Apr 12 16:33:57 2016
 
 Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
 Task_ReportData.asm                                                  PAGE   23
 
+    1190                            .dwattr $C$DW$T$48, DW_AT_decl_file("H:/TI_Workspace/TI_ARM_Tiva_Projects_EECS_690_Sp16/Source
+    1191                            .dwattr $C$DW$T$48, DW_AT_decl_line(0x99)
+    1192                            .dwattr $C$DW$T$48, DW_AT_decl_column(0x10)
+    1193                    $C$DW$T$130     .dwtag  DW_TAG_typedef, DW_AT_name("TaskParameters_t")
     1194                            .dwattr $C$DW$T$130, DW_AT_type(*$C$DW$T$48)
     1195                            .dwattr $C$DW$T$130, DW_AT_language(DW_LANG_C)
     1196                            .dwattr $C$DW$T$130, DW_AT_decl_file("H:/TI_Workspace/TI_ARM_Tiva_Projects_EECS_690_Sp16/Sourc
@@ -1374,15 +1378,15 @@ Task_ReportData.asm                                                  PAGE   23
     1242                            .dwattr $C$DW$72, DW_AT_TI_symbol_name("uxCurrentPriority")
     1243                            .dwattr $C$DW$72, DW_AT_data_member_location[DW_OP_plus_uconst 0x10]
     1244                            .dwattr $C$DW$72, DW_AT_accessibility(DW_ACCESS_public)
-    1245                            .dwattr $C$DW$72, DW_AT_decl_file("H:/TI_Workspace/TI_ARM_Tiva_Projects_EECS_690_Sp16/Source/i
-    1246                            .dwattr $C$DW$72, DW_AT_decl_line(0xac)
-    1247                            .dwattr $C$DW$72, DW_AT_decl_column(0x0e)
-    1248                    $C$DW$73        .dwtag  DW_TAG_member
-TI ARM Assembler PC v5.2.2 Tue Mar 29 11:54:13 2016
+TI ARM Assembler PC v5.2.2 Tue Apr 12 16:33:57 2016
 
 Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
 Task_ReportData.asm                                                  PAGE   24
 
+    1245                            .dwattr $C$DW$72, DW_AT_decl_file("H:/TI_Workspace/TI_ARM_Tiva_Projects_EECS_690_Sp16/Source/i
+    1246                            .dwattr $C$DW$72, DW_AT_decl_line(0xac)
+    1247                            .dwattr $C$DW$72, DW_AT_decl_column(0x0e)
+    1248                    $C$DW$73        .dwtag  DW_TAG_member
     1249                            .dwattr $C$DW$73, DW_AT_type(*$C$DW$T$26)
     1250                            .dwattr $C$DW$73, DW_AT_name("uxBasePriority")
     1251                            .dwattr $C$DW$73, DW_AT_TI_symbol_name("uxBasePriority")
@@ -1434,15 +1438,15 @@ Task_ReportData.asm                                                  PAGE   24
     1297                            .dwattr $C$DW$76, DW_AT_decl_line(0x88)
     1298                            .dwattr $C$DW$76, DW_AT_decl_column(0x0d)
     1299                    $C$DW$77        .dwtag  DW_TAG_member
-    1300                            .dwattr $C$DW$77, DW_AT_type(*$C$DW$T$31)
-    1301                            .dwattr $C$DW$77, DW_AT_name("xTimeOnEntering")
-    1302                            .dwattr $C$DW$77, DW_AT_TI_symbol_name("xTimeOnEntering")
-    1303                            .dwattr $C$DW$77, DW_AT_data_member_location[DW_OP_plus_uconst 0x4]
-TI ARM Assembler PC v5.2.2 Tue Mar 29 11:54:13 2016
+TI ARM Assembler PC v5.2.2 Tue Apr 12 16:33:57 2016
 
 Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
 Task_ReportData.asm                                                  PAGE   25
 
+    1300                            .dwattr $C$DW$77, DW_AT_type(*$C$DW$T$31)
+    1301                            .dwattr $C$DW$77, DW_AT_name("xTimeOnEntering")
+    1302                            .dwattr $C$DW$77, DW_AT_TI_symbol_name("xTimeOnEntering")
+    1303                            .dwattr $C$DW$77, DW_AT_data_member_location[DW_OP_plus_uconst 0x4]
     1304                            .dwattr $C$DW$77, DW_AT_accessibility(DW_ACCESS_public)
     1305                            .dwattr $C$DW$77, DW_AT_decl_file("H:/TI_Workspace/TI_ARM_Tiva_Projects_EECS_690_Sp16/Source/i
     1306                            .dwattr $C$DW$77, DW_AT_decl_line(0x89)
@@ -1494,15 +1498,15 @@ Task_ReportData.asm                                                  PAGE   25
     1352                            .dwcfi  undefined, 71
     1353                            .dwcfi  undefined, 72
     1354                            .dwcfi  undefined, 73
-    1355                            .dwcfi  undefined, 74
-    1356                            .dwcfi  undefined, 75
-    1357                            .dwcfi  undefined, 76
-    1358                            .dwcfi  undefined, 77
-TI ARM Assembler PC v5.2.2 Tue Mar 29 11:54:13 2016
+TI ARM Assembler PC v5.2.2 Tue Apr 12 16:33:57 2016
 
 Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
 Task_ReportData.asm                                                  PAGE   26
 
+    1355                            .dwcfi  undefined, 74
+    1356                            .dwcfi  undefined, 75
+    1357                            .dwcfi  undefined, 76
+    1358                            .dwcfi  undefined, 77
     1359                            .dwcfi  undefined, 78
     1360                            .dwcfi  undefined, 79
     1361                            .dwcfi  same_value, 80

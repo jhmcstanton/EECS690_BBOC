@@ -16,6 +16,12 @@ Tasks/Task_HeaterOn.obj: C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.
 Tasks/Task_HeaterOn.obj: C:/TI_CodeComposer/TivaWare/driverlib/sysctl.h
 Tasks/Task_HeaterOn.obj: C:/TI_CodeComposer/TivaWare/driverlib/pin_map.h
 Tasks/Task_HeaterOn.obj: C:/TI_CodeComposer/TivaWare/driverlib/gpio.h
+Tasks/Task_HeaterOn.obj: C:/TI_CodeComposer/TivaWare/driverlib/pwm.h
+Tasks/Task_HeaterOn.obj: H:/TI_Workspace/TI_ARM_Tiva_Projects_EECS_690_Sp16/FreeRTOS823_3_TM4C1294_Base_Test/Tasks/Task_ReportData.h
+Tasks/Task_HeaterOn.obj: C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include/stddef.h
+Tasks/Task_HeaterOn.obj: C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include/stdarg.h
+Tasks/Task_HeaterOn.obj: H:/TI_Workspace/TI_ARM_Tiva_Projects_EECS_690_Sp16/FreeRTOS823_3_TM4C1294_Base_Test/Drivers/uartstdio.h
+Tasks/Task_HeaterOn.obj: C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include/stdarg.h
 Tasks/Task_HeaterOn.obj: H:/TI_Workspace/TI_ARM_Tiva_Projects_EECS_690_Sp16/Source/include/FreeRTOS.h
 Tasks/Task_HeaterOn.obj: C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include/stddef.h
 Tasks/Task_HeaterOn.obj: C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include/stdarg.h
@@ -32,6 +38,7 @@ Tasks/Task_HeaterOn.obj: H:/TI_Workspace/TI_ARM_Tiva_Projects_EECS_690_Sp16/Sour
 Tasks/Task_HeaterOn.obj: H:/TI_Workspace/TI_ARM_Tiva_Projects_EECS_690_Sp16/Source/include/mpu_wrappers.h
 Tasks/Task_HeaterOn.obj: H:/TI_Workspace/TI_ARM_Tiva_Projects_EECS_690_Sp16/Source/include/task.h
 Tasks/Task_HeaterOn.obj: H:/TI_Workspace/TI_ARM_Tiva_Projects_EECS_690_Sp16/Source/include/list.h
+Tasks/Task_HeaterOn.obj: H:/TI_Workspace/TI_ARM_Tiva_Projects_EECS_690_Sp16/Source/include/queue.h
 Tasks/Task_HeaterOn.obj: C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include/stdio.h
 Tasks/Task_HeaterOn.obj: C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include/stdarg.h
 
@@ -51,6 +58,12 @@ C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include/stdarg.h:
 C:/TI_CodeComposer/TivaWare/driverlib/sysctl.h: 
 C:/TI_CodeComposer/TivaWare/driverlib/pin_map.h: 
 C:/TI_CodeComposer/TivaWare/driverlib/gpio.h: 
+C:/TI_CodeComposer/TivaWare/driverlib/pwm.h: 
+H:/TI_Workspace/TI_ARM_Tiva_Projects_EECS_690_Sp16/FreeRTOS823_3_TM4C1294_Base_Test/Tasks/Task_ReportData.h: 
+C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include/stddef.h: 
+C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include/stdarg.h: 
+H:/TI_Workspace/TI_ARM_Tiva_Projects_EECS_690_Sp16/FreeRTOS823_3_TM4C1294_Base_Test/Drivers/uartstdio.h: 
+C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include/stdarg.h: 
 H:/TI_Workspace/TI_ARM_Tiva_Projects_EECS_690_Sp16/Source/include/FreeRTOS.h: 
 C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include/stddef.h: 
 C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include/stdarg.h: 
@@ -67,5 +80,6 @@ H:/TI_Workspace/TI_ARM_Tiva_Projects_EECS_690_Sp16/Source/include/deprecated_def
 H:/TI_Workspace/TI_ARM_Tiva_Projects_EECS_690_Sp16/Source/include/mpu_wrappers.h: 
 H:/TI_Workspace/TI_ARM_Tiva_Projects_EECS_690_Sp16/Source/include/task.h: 
 H:/TI_Workspace/TI_ARM_Tiva_Projects_EECS_690_Sp16/Source/include/list.h: 
+H:/TI_Workspace/TI_ARM_Tiva_Projects_EECS_690_Sp16/Source/include/queue.h: 
 C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include/stdio.h: 
 C:/TI_CodeComposer/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include/stdarg.h: 

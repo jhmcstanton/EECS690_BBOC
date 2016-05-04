@@ -1,6 +1,6 @@
 ;******************************************************************************
 ;* TI ARM C/C++ Codegen                                             PC v5.2.2 *
-;* Date/Time created: Tue Mar 29 11:54:13 2016                                *
+;* Date/Time created: Tue Apr 12 16:33:57 2016                                *
 ;******************************************************************************
 	.compiler_opts --abi=eabi --arm_vmrs_si_workaround=off --code_state=16 --diag_wrap=off --disable_dual_state --embedded_constants=on --endian=little --float_support=FPv4SPD16 --hll_source=on --object_format=elf --quiet --silicon_version=7M4 --symdebug:dwarf --symdebug:dwarf_version=3 --unaligned_access=on 
 	.thumb
@@ -83,7 +83,7 @@ $C$DW$14	.dwtag  DW_TAG_variable, DW_AT_name("ReportData_Queue")
 	.dwattr $C$DW$14, DW_AT_decl_file("../Tasks/Task_ReportData.c")
 	.dwattr $C$DW$14, DW_AT_decl_line(0x1a)
 	.dwattr $C$DW$14, DW_AT_decl_column(0x16)
-;	C:\TI_CodeComposer\ccsv6\tools\compiler\ti-cgt-arm_5.2.2\bin\armacpia.exe -@C:\\Users\\YTEHEE~1.001\\AppData\\Local\\Temp\\0701212 
+;	C:\TI_CodeComposer\ccsv6\tools\compiler\ti-cgt-arm_5.2.2\bin\armacpia.exe -@C:\\Users\\YTEHEE~1.001\\AppData\\Local\\Temp\\0117612 
 	.sect	".text"
 	.clink
 	.thumbfunc Task_ReportData
@@ -219,7 +219,7 @@ $C$DW$23	.dwtag  DW_TAG_TI_branch
 ;******************************************************************************
 	.sect	".text"
 	.align	4
-||$C$SL1||:	.string	"%08d,%02d,%d,%d",10,0
+||$C$SL1||:	.string	"%08d,%02d,%03d,%03d",10,0
 ;******************************************************************************
 ;* CONSTANT TABLE                                                             *
 ;******************************************************************************

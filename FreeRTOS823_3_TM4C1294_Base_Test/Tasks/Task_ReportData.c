@@ -55,7 +55,7 @@ extern void Task_ReportData( void *pvParameters ) {
 										10 * portTICK_PERIOD_MS );
 
 	if ( ReportQueue_Status == pdTRUE ) {
-		UARTprintf( "%08d,%02d,%d,%d\n",
+		UARTprintf( "%08d,%02d,%03d,%03d\n",
 					 theReport.TimeStamp, theReport.ReportName,
 					 theReport.ReportValue_0, theReport.ReportValue_1 );
 		}

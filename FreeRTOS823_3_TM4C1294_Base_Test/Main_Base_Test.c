@@ -27,6 +27,7 @@ extern void Task_Blink_LED_D1( void *pvParameters );
 extern void Task_ReportTime( void *pvParameters );
 extern void Task_Simple_ADC0_Ch0( void *pvParameters );
 extern void Task_HeaterOn( void *pvParameters );
+extern void Task_ReportData( void *pvParameters );
 
 uint32_t ADC_RESULT;
 
@@ -58,6 +59,11 @@ int main( void ) {
 	//	Create task to turn-on the HeaterOn_H
 	//
 	xTaskCreate( Task_HeaterOn, "HeaterOn", 512, NULL, 1, NULL );
+
+	//
+	// Create reporting task
+	//
+	xTaskCreate( Task_ReportData, "ReportData", 512, NULL, 1, NULL );
 
 //	puts  ("Hello, world!" );
 
